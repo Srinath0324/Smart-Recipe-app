@@ -1,0 +1,1100 @@
+[
+  {
+    "id": "recipe_001",
+    "name": "Classic Tomato Rice",
+    "description": "Simple and flavorful one-pot rice dish",
+    "ingredients": ["rice", "tomato", "onion", "oil", "salt", "water"],
+    "instructions": [
+      "Heat oil in a pot and sauté chopped onions until golden",
+      "Add chopped tomatoes and cook until soft",
+      "Add washed rice and mix well",
+      "Add water (2 cups per cup of rice) and salt",
+      "Cover and cook on low heat for 20 minutes"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["vegetarian", "one-pot", "rice"]
+  },
+  {
+    "id": "recipe_002",
+    "name": "Vegetable Stir Fry",
+    "description": "Quick and healthy mixed vegetable dish",
+    "ingredients": [
+      "onion",
+      "tomato",
+      "carrot",
+      "beans",
+      "oil",
+      "salt",
+      "pepper"
+    ],
+    "instructions": [
+      "Heat oil in a pan",
+      "Add chopped onions and sauté",
+      "Add all vegetables and stir fry on high heat",
+      "Season with salt and pepper",
+      "Cook for 10 minutes until tender-crisp"
+    ],
+    "prepTimeMinutes": 20,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["vegetarian", "healthy", "quick"]
+  },
+  {
+    "id": "recipe_003",
+    "name": "Simple Egg Curry",
+    "description": "Protein-rich egg curry",
+    "ingredients": [
+      "eggs",
+      "onion",
+      "tomato",
+      "oil",
+      "salt",
+      "chili powder",
+      "turmeric"
+    ],
+    "instructions": [
+      "Boil eggs and peel them",
+      "Sauté onions in oil until golden",
+      "Add tomatoes and spices, cook until soft",
+      "Add water and bring to boil",
+      "Add boiled eggs and simmer for 10 minutes"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["protein", "curry", "eggs"]
+  },
+  {
+    "id": "recipe_004",
+    "name": "Chicken Fried Rice",
+    "description": "Delicious fried rice with chicken",
+    "ingredients": [
+      "rice",
+      "chicken",
+      "onion",
+      "carrot",
+      "peas",
+      "eggs",
+      "soy sauce",
+      "oil"
+    ],
+    "instructions": [
+      "Cook rice and let it cool",
+      "Cut chicken into small pieces and cook",
+      "Heat oil, scramble eggs and set aside",
+      "Stir fry vegetables and chicken",
+      "Add rice, soy sauce, and eggs. Mix well"
+    ],
+    "prepTimeMinutes": 35,
+    "servings": 4,
+    "difficulty": "Medium",
+    "category": "Dinner",
+    "tags": ["chicken", "rice", "fried-rice"]
+  },
+  {
+    "id": "recipe_005",
+    "name": "Potato Curry",
+    "description": "Comfort food potato curry",
+    "ingredients": [
+      "potato",
+      "onion",
+      "tomato",
+      "oil",
+      "salt",
+      "turmeric",
+      "chili powder"
+    ],
+    "instructions": [
+      "Peel and cube potatoes",
+      "Sauté onions until golden",
+      "Add tomatoes and spices",
+      "Add potatoes and water",
+      "Cook until potatoes are tender"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["vegetarian", "potato", "curry"]
+  },
+  {
+    "id": "recipe_006",
+    "name": "Vegetable Soup",
+    "description": "Healthy and warming vegetable soup",
+    "ingredients": [
+      "carrot",
+      "potato",
+      "onion",
+      "tomato",
+      "salt",
+      "pepper",
+      "water"
+    ],
+    "instructions": [
+      "Chop all vegetables into small pieces",
+      "Boil water in a pot",
+      "Add all vegetables and cook until soft",
+      "Season with salt and pepper",
+      "Blend if desired for smooth soup"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["vegetarian", "soup", "healthy"]
+  },
+  {
+    "id": "recipe_007",
+    "name": "Scrambled Eggs",
+    "description": "Quick and easy breakfast",
+    "ingredients": ["eggs", "milk", "butter", "salt", "pepper"],
+    "instructions": [
+      "Beat eggs with milk, salt, and pepper",
+      "Melt butter in a pan",
+      "Pour egg mixture and cook on low heat",
+      "Stir gently until eggs are cooked",
+      "Serve hot"
+    ],
+    "prepTimeMinutes": 10,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["eggs", "quick", "breakfast"]
+  },
+  {
+    "id": "recipe_008",
+    "name": "Tomato Soup",
+    "description": "Classic creamy tomato soup",
+    "ingredients": [
+      "tomato",
+      "onion",
+      "garlic",
+      "cream",
+      "butter",
+      "salt",
+      "pepper",
+      "sugar"
+    ],
+    "instructions": [
+      "Sauté onions and garlic in butter",
+      "Add chopped tomatoes and cook until soft",
+      "Blend until smooth",
+      "Add cream, salt, pepper, and a pinch of sugar",
+      "Simmer for 5 minutes"
+    ],
+    "prepTimeMinutes": 20,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["soup", "tomato", "vegetarian"]
+  },
+  {
+    "id": "recipe_009",
+    "name": "Chicken Curry",
+    "description": "Flavorful chicken curry",
+    "ingredients": [
+      "chicken",
+      "onion",
+      "tomato",
+      "yogurt",
+      "oil",
+      "ginger",
+      "garlic",
+      "spices"
+    ],
+    "instructions": [
+      "Marinate chicken with yogurt and spices",
+      "Sauté onions, ginger, and garlic",
+      "Add tomatoes and cook",
+      "Add marinated chicken and cook",
+      "Simmer until chicken is tender"
+    ],
+    "prepTimeMinutes": 45,
+    "servings": 4,
+    "difficulty": "Medium",
+    "category": "Dinner",
+    "tags": ["chicken", "curry", "spicy"]
+  },
+  {
+    "id": "recipe_010",
+    "name": "Vegetable Fried Rice",
+    "description": "Colorful vegetable fried rice",
+    "ingredients": [
+      "rice",
+      "carrot",
+      "peas",
+      "beans",
+      "onion",
+      "soy sauce",
+      "oil"
+    ],
+    "instructions": [
+      "Cook rice and let it cool",
+      "Chop all vegetables",
+      "Heat oil and stir fry vegetables",
+      "Add rice and soy sauce",
+      "Mix well and serve hot"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["vegetarian", "rice", "fried-rice"]
+  },
+  {
+    "id": "recipe_011",
+    "name": "Omelette",
+    "description": "Fluffy omelette with vegetables",
+    "ingredients": ["eggs", "onion", "tomato", "pepper", "salt", "oil"],
+    "instructions": [
+      "Beat eggs with salt",
+      "Chop onions, tomatoes, and peppers",
+      "Heat oil in a pan",
+      "Pour eggs and add vegetables",
+      "Fold and cook until done"
+    ],
+    "prepTimeMinutes": 15,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["eggs", "breakfast", "quick"]
+  },
+  {
+    "id": "recipe_012",
+    "name": "Rice and Lentils",
+    "description": "Nutritious rice and lentil combination",
+    "ingredients": [
+      "rice",
+      "lentils",
+      "onion",
+      "tomato",
+      "oil",
+      "salt",
+      "turmeric"
+    ],
+    "instructions": [
+      "Wash rice and lentils together",
+      "Sauté onions and tomatoes",
+      "Add rice, lentils, and water",
+      "Add salt and turmeric",
+      "Cook until soft and fluffy"
+    ],
+    "prepTimeMinutes": 35,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["vegetarian", "protein", "rice"]
+  },
+  {
+    "id": "recipe_013",
+    "name": "Carrot Salad",
+    "description": "Fresh and crunchy carrot salad",
+    "ingredients": ["carrot", "lemon", "salt", "pepper", "oil"],
+    "instructions": [
+      "Grate carrots",
+      "Add lemon juice, salt, and pepper",
+      "Drizzle with oil",
+      "Mix well and serve"
+    ],
+    "prepTimeMinutes": 10,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["salad", "healthy", "raw"]
+  },
+  {
+    "id": "recipe_014",
+    "name": "Potato Fry",
+    "description": "Crispy fried potatoes",
+    "ingredients": ["potato", "oil", "salt", "chili powder", "turmeric"],
+    "instructions": [
+      "Cut potatoes into thin slices",
+      "Heat oil in a pan",
+      "Fry potatoes until golden",
+      "Sprinkle salt and spices",
+      "Serve hot"
+    ],
+    "prepTimeMinutes": 20,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["potato", "fried", "snack"]
+  },
+  {
+    "id": "recipe_015",
+    "name": "Chicken Soup",
+    "description": "Comforting chicken soup",
+    "ingredients": [
+      "chicken",
+      "carrot",
+      "onion",
+      "celery",
+      "salt",
+      "pepper",
+      "water"
+    ],
+    "instructions": [
+      "Boil chicken pieces in water",
+      "Add chopped vegetables",
+      "Season with salt and pepper",
+      "Simmer until chicken is cooked",
+      "Serve hot"
+    ],
+    "prepTimeMinutes": 40,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["chicken", "soup", "comfort-food"]
+  },
+  {
+    "id": "recipe_016",
+    "name": "Tomato Pasta",
+    "description": "Simple tomato pasta",
+    "ingredients": ["pasta", "tomato", "garlic", "oil", "salt", "basil"],
+    "instructions": [
+      "Boil pasta according to package instructions",
+      "Sauté garlic in oil",
+      "Add chopped tomatoes and cook",
+      "Add cooked pasta and mix",
+      "Garnish with basil"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["pasta", "italian", "vegetarian"]
+  },
+  {
+    "id": "recipe_017",
+    "name": "Egg Fried Rice",
+    "description": "Quick egg fried rice",
+    "ingredients": ["rice", "eggs", "onion", "soy sauce", "oil", "salt"],
+    "instructions": [
+      "Cook rice and let it cool",
+      "Scramble eggs and set aside",
+      "Stir fry onions",
+      "Add rice, eggs, and soy sauce",
+      "Mix well and serve"
+    ],
+    "prepTimeMinutes": 20,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["rice", "eggs", "quick"]
+  },
+  {
+    "id": "recipe_018",
+    "name": "Vegetable Curry",
+    "description": "Mixed vegetable curry",
+    "ingredients": [
+      "potato",
+      "carrot",
+      "peas",
+      "beans",
+      "onion",
+      "tomato",
+      "oil",
+      "spices"
+    ],
+    "instructions": [
+      "Chop all vegetables",
+      "Sauté onions and tomatoes",
+      "Add vegetables and spices",
+      "Add water and cook until tender",
+      "Serve with rice or bread"
+    ],
+    "prepTimeMinutes": 35,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["vegetarian", "curry", "healthy"]
+  },
+  {
+    "id": "recipe_019",
+    "name": "Boiled Eggs",
+    "description": "Perfect boiled eggs",
+    "ingredients": ["eggs", "water", "salt"],
+    "instructions": [
+      "Place eggs in a pot",
+      "Cover with water",
+      "Bring to boil",
+      "Cook for 8-10 minutes",
+      "Cool in ice water and peel"
+    ],
+    "prepTimeMinutes": 15,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["eggs", "protein", "simple"]
+  },
+  {
+    "id": "recipe_020",
+    "name": "Chicken Stir Fry",
+    "description": "Quick chicken and vegetable stir fry",
+    "ingredients": [
+      "chicken",
+      "onion",
+      "pepper",
+      "carrot",
+      "soy sauce",
+      "oil",
+      "garlic"
+    ],
+    "instructions": [
+      "Cut chicken into strips",
+      "Heat oil and cook chicken",
+      "Add vegetables and stir fry",
+      "Add soy sauce and garlic",
+      "Cook until done"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["chicken", "stir-fry", "quick"]
+  },
+  {
+    "id": "recipe_021",
+    "name": "Onion Rings",
+    "description": "Crispy fried onion rings",
+    "ingredients": ["onion", "flour", "eggs", "breadcrumbs", "oil", "salt"],
+    "instructions": [
+      "Slice onions into rings",
+      "Dip in flour, then egg, then breadcrumbs",
+      "Deep fry until golden",
+      "Drain on paper towels",
+      "Serve hot with sauce"
+    ],
+    "prepTimeMinutes": 20,
+    "servings": 4,
+    "difficulty": "Medium",
+    "category": "Snack",
+    "tags": ["fried", "snack", "onion"]
+  },
+  {
+    "id": "recipe_022",
+    "name": "Rice Pudding",
+    "description": "Sweet and creamy rice pudding",
+    "ingredients": ["rice", "milk", "sugar", "cardamom", "nuts"],
+    "instructions": [
+      "Cook rice in milk on low heat",
+      "Add sugar and cardamom",
+      "Stir frequently until thick",
+      "Garnish with nuts",
+      "Serve warm or cold"
+    ],
+    "prepTimeMinutes": 40,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dessert",
+    "tags": ["dessert", "sweet", "rice"]
+  },
+  {
+    "id": "recipe_023",
+    "name": "Potato Salad",
+    "description": "Creamy potato salad",
+    "ingredients": ["potato", "mayonnaise", "onion", "salt", "pepper", "lemon"],
+    "instructions": [
+      "Boil and cube potatoes",
+      "Mix with chopped onions",
+      "Add mayonnaise, salt, and pepper",
+      "Add lemon juice",
+      "Chill before serving"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["salad", "potato", "cold"]
+  },
+  {
+    "id": "recipe_024",
+    "name": "Tomato Chutney",
+    "description": "Spicy tomato chutney",
+    "ingredients": ["tomato", "onion", "chili", "oil", "salt", "mustard seeds"],
+    "instructions": [
+      "Heat oil and add mustard seeds",
+      "Add onions and chilies",
+      "Add chopped tomatoes",
+      "Cook until thick",
+      "Serve as a side dish"
+    ],
+    "prepTimeMinutes": 20,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["chutney", "spicy", "condiment"]
+  },
+  {
+    "id": "recipe_025",
+    "name": "Carrot Soup",
+    "description": "Smooth and creamy carrot soup",
+    "ingredients": [
+      "carrot",
+      "onion",
+      "butter",
+      "cream",
+      "salt",
+      "pepper",
+      "water"
+    ],
+    "instructions": [
+      "Sauté onions in butter",
+      "Add chopped carrots and water",
+      "Cook until soft",
+      "Blend until smooth",
+      "Add cream and season"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["soup", "carrot", "creamy"]
+  },
+  {
+    "id": "recipe_026",
+    "name": "Chicken Sandwich",
+    "description": "Grilled chicken sandwich",
+    "ingredients": [
+      "chicken",
+      "bread",
+      "lettuce",
+      "tomato",
+      "mayonnaise",
+      "cheese"
+    ],
+    "instructions": [
+      "Grill chicken breast",
+      "Toast bread slices",
+      "Layer lettuce, tomato, chicken, and cheese",
+      "Spread mayonnaise",
+      "Serve immediately"
+    ],
+    "prepTimeMinutes": 20,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["sandwich", "chicken", "quick"]
+  },
+  {
+    "id": "recipe_027",
+    "name": "Vegetable Sandwich",
+    "description": "Fresh vegetable sandwich",
+    "ingredients": ["bread", "cucumber", "tomato", "onion", "cheese", "butter"],
+    "instructions": [
+      "Butter bread slices",
+      "Layer sliced vegetables",
+      "Add cheese",
+      "Grill or serve fresh",
+      "Cut and serve"
+    ],
+    "prepTimeMinutes": 10,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["sandwich", "vegetarian", "quick"]
+  },
+  {
+    "id": "recipe_028",
+    "name": "Egg Sandwich",
+    "description": "Classic egg sandwich",
+    "ingredients": ["eggs", "bread", "butter", "salt", "pepper"],
+    "instructions": [
+      "Boil eggs and mash",
+      "Mix with salt and pepper",
+      "Butter bread slices",
+      "Spread egg mixture",
+      "Serve fresh"
+    ],
+    "prepTimeMinutes": 15,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["sandwich", "eggs", "breakfast"]
+  },
+  {
+    "id": "recipe_029",
+    "name": "Lemon Rice",
+    "description": "Tangy lemon flavored rice",
+    "ingredients": [
+      "rice",
+      "lemon",
+      "peanuts",
+      "oil",
+      "mustard seeds",
+      "turmeric",
+      "salt"
+    ],
+    "instructions": [
+      "Cook rice and let it cool",
+      "Heat oil and add mustard seeds",
+      "Add peanuts and turmeric",
+      "Mix with rice and lemon juice",
+      "Serve at room temperature"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["rice", "tangy", "vegetarian"]
+  },
+  {
+    "id": "recipe_030",
+    "name": "Potato Soup",
+    "description": "Creamy potato soup",
+    "ingredients": ["potato", "onion", "butter", "milk", "salt", "pepper"],
+    "instructions": [
+      "Sauté onions in butter",
+      "Add cubed potatoes and water",
+      "Cook until soft",
+      "Mash or blend partially",
+      "Add milk and season"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["soup", "potato", "creamy"]
+  },
+  {
+    "id": "recipe_031",
+    "name": "Chicken Rice",
+    "description": "One-pot chicken and rice",
+    "ingredients": [
+      "chicken",
+      "rice",
+      "onion",
+      "tomato",
+      "oil",
+      "spices",
+      "water"
+    ],
+    "instructions": [
+      "Cook chicken pieces with spices",
+      "Add onions and tomatoes",
+      "Add rice and water",
+      "Cook until rice is done",
+      "Serve hot"
+    ],
+    "prepTimeMinutes": 40,
+    "servings": 4,
+    "difficulty": "Medium",
+    "category": "Dinner",
+    "tags": ["chicken", "rice", "one-pot"]
+  },
+  {
+    "id": "recipe_032",
+    "name": "Tomato Salad",
+    "description": "Fresh tomato salad",
+    "ingredients": ["tomato", "onion", "cucumber", "lemon", "salt", "pepper"],
+    "instructions": [
+      "Chop tomatoes, onions, and cucumber",
+      "Mix in a bowl",
+      "Add lemon juice, salt, and pepper",
+      "Toss well",
+      "Serve fresh"
+    ],
+    "prepTimeMinutes": 10,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["salad", "fresh", "healthy"]
+  },
+  {
+    "id": "recipe_033",
+    "name": "Carrot Stir Fry",
+    "description": "Simple carrot stir fry",
+    "ingredients": ["carrot", "onion", "oil", "mustard seeds", "salt"],
+    "instructions": [
+      "Heat oil and add mustard seeds",
+      "Add sliced onions",
+      "Add grated carrots",
+      "Stir fry for 5 minutes",
+      "Season and serve"
+    ],
+    "prepTimeMinutes": 15,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["carrot", "stir-fry", "quick"]
+  },
+  {
+    "id": "recipe_034",
+    "name": "Onion Soup",
+    "description": "Classic French onion soup",
+    "ingredients": [
+      "onion",
+      "butter",
+      "flour",
+      "beef broth",
+      "cheese",
+      "bread"
+    ],
+    "instructions": [
+      "Caramelize onions in butter",
+      "Add flour and stir",
+      "Add broth and simmer",
+      "Pour into bowls",
+      "Top with bread and cheese, broil"
+    ],
+    "prepTimeMinutes": 45,
+    "servings": 4,
+    "difficulty": "Medium",
+    "category": "Dinner",
+    "tags": ["soup", "onion", "french"]
+  },
+  {
+    "id": "recipe_035",
+    "name": "Egg Curry",
+    "description": "Spicy egg curry",
+    "ingredients": ["eggs", "onion", "tomato", "coconut milk", "oil", "spices"],
+    "instructions": [
+      "Boil and peel eggs",
+      "Make curry base with onions and tomatoes",
+      "Add coconut milk and spices",
+      "Add eggs and simmer",
+      "Serve with rice"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["eggs", "curry", "spicy"]
+  },
+  {
+    "id": "recipe_036",
+    "name": "Chicken Salad",
+    "description": "Protein-rich chicken salad",
+    "ingredients": [
+      "chicken",
+      "lettuce",
+      "tomato",
+      "cucumber",
+      "mayonnaise",
+      "lemon"
+    ],
+    "instructions": [
+      "Grill and dice chicken",
+      "Chop vegetables",
+      "Mix all ingredients",
+      "Add mayonnaise and lemon",
+      "Serve chilled"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["salad", "chicken", "protein"]
+  },
+  {
+    "id": "recipe_037",
+    "name": "Plain Rice",
+    "description": "Perfectly cooked plain rice",
+    "ingredients": ["rice", "water", "salt"],
+    "instructions": [
+      "Wash rice thoroughly",
+      "Add water (2 cups per cup of rice)",
+      "Add salt",
+      "Bring to boil, then simmer",
+      "Cook for 15-20 minutes"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["rice", "basic", "simple"]
+  },
+  {
+    "id": "recipe_038",
+    "name": "Potato Mash",
+    "description": "Creamy mashed potatoes",
+    "ingredients": ["potato", "butter", "milk", "salt", "pepper"],
+    "instructions": [
+      "Boil potatoes until soft",
+      "Drain and mash",
+      "Add butter and milk",
+      "Season with salt and pepper",
+      "Mix until creamy"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["potato", "mashed", "comfort-food"]
+  },
+  {
+    "id": "recipe_039",
+    "name": "Tomato Omelette",
+    "description": "Fluffy omelette with tomatoes",
+    "ingredients": ["eggs", "tomato", "onion", "salt", "pepper", "oil"],
+    "instructions": [
+      "Beat eggs with salt and pepper",
+      "Chop tomatoes and onions",
+      "Heat oil in pan",
+      "Pour eggs and add vegetables",
+      "Fold and serve"
+    ],
+    "prepTimeMinutes": 15,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["eggs", "omelette", "breakfast"]
+  },
+  {
+    "id": "recipe_040",
+    "name": "Carrot Cake",
+    "description": "Moist carrot cake",
+    "ingredients": [
+      "carrot",
+      "flour",
+      "sugar",
+      "eggs",
+      "oil",
+      "baking powder",
+      "cinnamon"
+    ],
+    "instructions": [
+      "Grate carrots",
+      "Mix dry ingredients",
+      "Beat eggs with sugar and oil",
+      "Combine all ingredients",
+      "Bake at 180°C for 40 minutes"
+    ],
+    "prepTimeMinutes": 60,
+    "servings": 8,
+    "difficulty": "Medium",
+    "category": "Dessert",
+    "tags": ["cake", "dessert", "carrot"]
+  },
+  {
+    "id": "recipe_041",
+    "name": "Chicken Noodles",
+    "description": "Stir-fried chicken noodles",
+    "ingredients": [
+      "noodles",
+      "chicken",
+      "vegetables",
+      "soy sauce",
+      "oil",
+      "garlic"
+    ],
+    "instructions": [
+      "Boil noodles and drain",
+      "Cook chicken pieces",
+      "Stir fry vegetables",
+      "Add noodles, chicken, and soy sauce",
+      "Toss and serve hot"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["noodles", "chicken", "asian"]
+  },
+  {
+    "id": "recipe_042",
+    "name": "Onion Pakora",
+    "description": "Crispy onion fritters",
+    "ingredients": [
+      "onion",
+      "chickpea flour",
+      "rice flour",
+      "chili powder",
+      "salt",
+      "oil"
+    ],
+    "instructions": [
+      "Slice onions thinly",
+      "Mix with flours and spices",
+      "Add water to make batter",
+      "Deep fry spoonfuls until golden",
+      "Serve hot with chutney"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["fried", "snack", "indian"]
+  },
+  {
+    "id": "recipe_043",
+    "name": "Egg Bhurji",
+    "description": "Indian style scrambled eggs",
+    "ingredients": ["eggs", "onion", "tomato", "chili", "oil", "spices"],
+    "instructions": [
+      "Heat oil and sauté onions",
+      "Add tomatoes and spices",
+      "Beat eggs and pour in",
+      "Scramble until cooked",
+      "Serve with bread"
+    ],
+    "prepTimeMinutes": 15,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["eggs", "indian", "spicy"]
+  },
+  {
+    "id": "recipe_044",
+    "name": "Vegetable Pasta",
+    "description": "Healthy vegetable pasta",
+    "ingredients": [
+      "pasta",
+      "carrot",
+      "peas",
+      "tomato",
+      "garlic",
+      "oil",
+      "cheese"
+    ],
+    "instructions": [
+      "Boil pasta",
+      "Sauté garlic and vegetables",
+      "Add cooked pasta",
+      "Toss with cheese",
+      "Serve hot"
+    ],
+    "prepTimeMinutes": 25,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Dinner",
+    "tags": ["pasta", "vegetarian", "italian"]
+  },
+  {
+    "id": "recipe_045",
+    "name": "Potato Wedges",
+    "description": "Crispy baked potato wedges",
+    "ingredients": [
+      "potato",
+      "oil",
+      "paprika",
+      "salt",
+      "pepper",
+      "garlic powder"
+    ],
+    "instructions": [
+      "Cut potatoes into wedges",
+      "Toss with oil and spices",
+      "Arrange on baking sheet",
+      "Bake at 200°C for 30 minutes",
+      "Serve with dip"
+    ],
+    "prepTimeMinutes": 40,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Snack",
+    "tags": ["potato", "baked", "snack"]
+  },
+  {
+    "id": "recipe_046",
+    "name": "Tomato Rice",
+    "description": "South Indian tomato rice",
+    "ingredients": ["rice", "tomato", "onion", "peanuts", "oil", "spices"],
+    "instructions": [
+      "Cook rice and set aside",
+      "Make tomato paste with spices",
+      "Roast peanuts",
+      "Mix rice with tomato paste",
+      "Garnish with peanuts"
+    ],
+    "prepTimeMinutes": 30,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["rice", "tomato", "indian"]
+  },
+  {
+    "id": "recipe_047",
+    "name": "Chicken Biryani",
+    "description": "Aromatic chicken biryani",
+    "ingredients": [
+      "chicken",
+      "rice",
+      "onion",
+      "yogurt",
+      "spices",
+      "oil",
+      "mint"
+    ],
+    "instructions": [
+      "Marinate chicken with yogurt and spices",
+      "Cook rice partially",
+      "Layer chicken and rice",
+      "Cook on low heat (dum)",
+      "Serve with raita"
+    ],
+    "prepTimeMinutes": 60,
+    "servings": 4,
+    "difficulty": "Hard",
+    "category": "Dinner",
+    "tags": ["biryani", "chicken", "indian"]
+  },
+  {
+    "id": "recipe_048",
+    "name": "Carrot Halwa",
+    "description": "Sweet carrot dessert",
+    "ingredients": ["carrot", "milk", "sugar", "ghee", "cardamom", "nuts"],
+    "instructions": [
+      "Grate carrots",
+      "Cook in milk until soft",
+      "Add sugar and ghee",
+      "Cook until thick",
+      "Garnish with nuts"
+    ],
+    "prepTimeMinutes": 45,
+    "servings": 4,
+    "difficulty": "Medium",
+    "category": "Dessert",
+    "tags": ["dessert", "sweet", "indian"]
+  },
+  {
+    "id": "recipe_049",
+    "name": "Egg Toast",
+    "description": "Quick egg toast",
+    "ingredients": ["bread", "eggs", "butter", "salt", "pepper"],
+    "instructions": [
+      "Beat eggs with salt and pepper",
+      "Dip bread in egg mixture",
+      "Fry in butter until golden",
+      "Flip and cook other side",
+      "Serve hot"
+    ],
+    "prepTimeMinutes": 10,
+    "servings": 2,
+    "difficulty": "Easy",
+    "category": "Breakfast",
+    "tags": ["eggs", "toast", "quick"]
+  },
+  {
+    "id": "recipe_050",
+    "name": "Mixed Vegetable Rice",
+    "description": "Colorful mixed vegetable rice",
+    "ingredients": [
+      "rice",
+      "carrot",
+      "peas",
+      "beans",
+      "potato",
+      "onion",
+      "oil",
+      "spices"
+    ],
+    "instructions": [
+      "Chop all vegetables",
+      "Sauté vegetables with spices",
+      "Add washed rice and water",
+      "Cook until rice is done",
+      "Serve hot"
+    ],
+    "prepTimeMinutes": 35,
+    "servings": 4,
+    "difficulty": "Easy",
+    "category": "Lunch",
+    "tags": ["rice", "vegetarian", "one-pot"]
+  }
+]
