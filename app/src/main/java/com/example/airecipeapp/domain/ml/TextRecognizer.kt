@@ -16,11 +16,7 @@ class TextRecognizer(private val context: Context) {
 
     private val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
     private val imagePreprocessor = ImagePreprocessor(context)
-    
-    /**
-     * Process image with preprocessing for better OCR results
-     * Returns structured OCR result with text blocks
-     */
+
     suspend fun recognizeText(bitmap: Bitmap): RecognitionResult {
         return try {
             // Preprocess image for better OCR

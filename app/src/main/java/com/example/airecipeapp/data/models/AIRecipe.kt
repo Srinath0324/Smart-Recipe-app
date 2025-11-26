@@ -1,8 +1,6 @@
 package com.example.airecipeapp.data.models
 
-/**
- * Data class representing an AI-generated recipe
- */
+
 data class AIRecipe(
     val title: String,
     val ingredients: List<String>,

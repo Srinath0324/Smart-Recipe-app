@@ -113,8 +113,10 @@ dependencies {
     // Kotlinx Coroutines Play Services (for ML Kit await())
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
 
-    // LLM Inference - llama.cpp Kotlin bindings for GGUF models
-    implementation("io.github.ljcamargo:llamacpp-kotlin:0.1.0")
+    // LLM Inference - Removed llamacpp-kotlin due to 16KB alignment issues
+    // The library was not being used (stub implementation only)
+    // TODO: Add 16KB-compatible LLM library when implementing actual inference
+    // implementation("io.github.ljcamargo:llamacpp-kotlin:0.1.0") // REMOVED
 
     // Room
     implementation(libs.androidx.room.runtime)
