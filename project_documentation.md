@@ -2,7 +2,7 @@
 
 **Submitted to:** Kruthak Technology  
 **Position:** Junior Android Developer  
-**Developer:** [Your Name]  
+**Developer:** Srinath 
 **Date:** November 26, 2025
 
 ---
