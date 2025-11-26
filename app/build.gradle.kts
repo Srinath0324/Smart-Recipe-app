@@ -113,6 +113,9 @@ dependencies {
     // Kotlinx Coroutines Play Services (for ML Kit await())
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
 
+    // LLM Inference - llama.cpp Kotlin bindings for GGUF models
+    implementation("io.github.ljcamargo:llamacpp-kotlin:0.1.0")
+
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)

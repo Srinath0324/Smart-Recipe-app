@@ -2,7 +2,10 @@ package com.example.airecipeapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.airecipeapp.data.repository.ModelRepository
 import com.example.airecipeapp.data.repository.ScanRepository
+import com.example.airecipeapp.domain.ml.ModelDownloadManager
+import com.example.airecipeapp.domain.usecase.GenerateAIRecipesUseCase
 import com.example.airecipeapp.domain.usecase.MatchRecipesUseCase
 import com.example.airecipeapp.domain.usecase.ProcessImageUseCase
 import com.example.airecipeapp.ui.screens.camera.CameraViewModel
@@ -40,11 +43,20 @@ class EditorViewModelFactory(
 
 class RecipeViewModelFactory(
     private val scanRepository: ScanRepository,
-    private val matchRecipesUseCase: MatchRecipesUseCase
+    private val matchRecipesUseCase: MatchRecipesUseCase,
+    private val modelRepository: ModelRepository,
+    private val modelDownloadManager: ModelDownloadManager,
+    private val generateAIRecipesUseCase: GenerateAIRecipesUseCase
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         @Suppress("UNCHECKED_CAST")
-        return RecipeViewModel(scanRepository, matchRecipesUseCase) as T
+        return RecipeViewModel(
+            scanRepository,
+            matchRecipesUseCase,
+            modelRepository,
+            modelDownloadManager,
+            generateAIRecipesUseCase
+        ) as T
     }
 }
 

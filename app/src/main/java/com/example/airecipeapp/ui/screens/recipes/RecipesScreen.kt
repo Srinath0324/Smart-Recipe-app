@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -12,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.airecipeapp.ui.components.AIRecipeCard
+import com.example.airecipeapp.ui.components.ModelDownloadDialog
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -33,7 +36,7 @@ fun RecipeResultsScreen(
                 title = { Text("Recipe Suggestions") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back")
                     }
                 }
             )
@@ -87,54 +90,130 @@ fun RecipeResultsScreen(
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         FilterChip(
-                            selected = uiState.showQuickSuggestions,
-                            onClick = { if (!uiState.showQuickSuggestions) viewModel.toggleSuggestionMode() },
-                            label = { Text("Quick Suggestions") },
+                            selected = !uiState.showAIRecipes,
+                            onClick = { if (uiState.showAIRecipes) viewModel.toggleSuggestionMode() },
+                            label = { Text("Recipe Matches") },
                             modifier = Modifier.weight(1f)
                         )
                         FilterChip(
-                            selected = !uiState.showQuickSuggestions,
-                            onClick = { if (uiState.showQuickSuggestions) viewModel.toggleSuggestionMode() },
-                            label = { Text("Recipe Matches") },
-                            modifier = Modifier.weight(1f)
+                            selected = uiState.showAIRecipes,
+                            onClick = { if (!uiState.showAIRecipes) viewModel.toggleSuggestionMode() },
+                            label = { Text("AI Recipes") },
+                            modifier = Modifier.weight(1f),
+                            leadingIcon = if (uiState.showAIRecipes) {
+                                { Icon(Icons.Default.AutoAwesome, null, Modifier.size(18.dp)) }
+                            } else null
                         )
                     }
                     
                     Spacer(modifier = Modifier.height(8.dp))
                 }
                 
-                if (uiState.showQuickSuggestions) {
-                    // Quick suggestions
+                if (uiState.showAIRecipes) {
+                    // AI Recipes
                     item {
-                        Text(
-                            text = "Quick Recipe Ideas",
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold
-                        )
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.AutoAwesome,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                            Text(
+                                text = "AI Recipe Suggestions",
+                                style = MaterialTheme.typography.titleLarge,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
                     }
                     
-                    items(uiState.quickSuggestions.size) { index ->
-                        Card(
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = CardDefaults.cardColors(
-                                containerColor = MaterialTheme.colorScheme.secondaryContainer
-                            )
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(16.dp),
-                                verticalAlignment = Alignment.CenterVertically
+                    if (uiState.isGeneratingAI) {
+                        item {
+                            Card(
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = CardDefaults.cardColors(
+                                    containerColor = MaterialTheme.colorScheme.secondaryContainer
+                                )
                             ) {
-                                Icon(
-                                    imageVector = Icons.Default.Lightbulb,
-                                    contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.secondary
-                                )
-                                Spacer(modifier = Modifier.width(12.dp))
-                                Text(
-                                    text = uiState.quickSuggestions[index],
-                                    style = MaterialTheme.typography.bodyLarge
-                                )
+                                Column(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(24.dp),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                                ) {
+                                    CircularProgressIndicator()
+                                    Text(
+                                        text = "Generating AI recipes...",
+                                        style = MaterialTheme.typography.bodyLarge
+                                    )
+                                    Text(
+                                        text = "This may take 10-30 seconds",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.7f)
+                                    )
+                                }
                             }
+                        }
+                    } else if (uiState.error != null) {
+                        item {
+                            Card(
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = CardDefaults.cardColors(
+                                    containerColor = MaterialTheme.colorScheme.errorContainer
+                                )
+                            ) {
+                                Row(
+                                    modifier = Modifier.padding(16.dp),
+                                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Error,
+                                        contentDescription = null,
+                                        tint = MaterialTheme.colorScheme.error
+                                    )
+                                    Text(
+                                        text = uiState.error!!,
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.onErrorContainer
+                                    )
+                                }
+                            }
+                        }
+                    } else if (uiState.aiRecipes.isEmpty()) {
+                        item {
+                            Card(
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = CardDefaults.cardColors(
+                                    containerColor = MaterialTheme.colorScheme.surfaceVariant
+                                )
+                            ) {
+                                Column(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(24.dp),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Info,
+                                        contentDescription = null,
+                                        modifier = Modifier.size(48.dp),
+                                        tint = MaterialTheme.colorScheme.primary
+                                    )
+                                    Text(
+                                        text = "No AI recipes generated yet",
+                                        style = MaterialTheme.typography.bodyLarge
+                                    )
+                                }
+                            }
+                        }
+                    } else {
+                        items(uiState.aiRecipes.size) { index ->
+                            AIRecipeCard(recipe = uiState.aiRecipes[index])
                         }
                     }
                 } else {
@@ -161,6 +240,18 @@ fun RecipeResultsScreen(
                 item {
                     Spacer(modifier = Modifier.height(16.dp))
                 }
+            }
+            
+            // Model download dialog
+            if (uiState.showModelDialog && uiState.requirementsCheck != null) {
+                ModelDownloadDialog(
+                    isModelDownloaded = uiState.isModelDownloaded,
+                    requirementsCheck = uiState.requirementsCheck!!,
+                    downloadProgress = uiState.downloadProgress,
+                    onDownloadClick = viewModel::downloadModel,
+                    onDeleteClick = viewModel::deleteModel,
+                    onDismiss = viewModel::hideModelDialog
+                )
             }
         }
     }

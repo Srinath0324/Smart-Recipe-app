@@ -71,41 +71,42 @@ class ParseIngredientsUseCase {
         val cleanedLine = cleanText(line)
         if (cleanedLine.length < 2) return null
         
-        // Try to extract quantity and unit
+        // Initialize default values
         var quantity = "1"
         var unit = "piece"
         var name = cleanedLine
         
-        for (pattern in QUANTITY_PATTERNS) {
-            val match = pattern.find(cleanedLine)
-            if (match != null) {
-                val (first, second) = match.destructured
-                
-                // Check if first group is number or unit
-                val isFirstNumber = first.toDoubleOrNull() != null
-                
-                if (isFirstNumber) {
-                    quantity = first
-                    val possibleUnit = second.lowercase(Locale.getDefault())
-                    if (UNITS.contains(possibleUnit) || possibleUnit.length <= 4) {
-                        unit = possibleUnit
-                        // Remove quantity and unit from name
-                        name = cleanedLine.replace(match.value, "").trim()
-                    }
-                } else {
-                    // Reversed format: "kg 1"
-                    val possibleUnit = first.lowercase(Locale.getDefault())
-                    if (UNITS.contains(possibleUnit) || possibleUnit.length <= 4) {
-                        unit = possibleUnit
-                        quantity = second
-                        name = cleanedLine.replace(match.value, "").trim()
-                    }
-                }
-                break
+        // Check for dash-separated format: "Item - Quantity+Unit"
+        // Handle various dash types: - – —
+        val dashPattern = Regex("""(.+?)\s*[-–—]\s*(.+)""")
+        val dashMatch = dashPattern.find(cleanedLine)
+        
+        if (dashMatch != null) {
+            // Split by dash: left side is item name, right side is quantity+unit
+            val (itemPart, quantityPart) = dashMatch.destructured
+            name = itemPart.trim()
+            
+            // Extract quantity and unit from the right side
+            val extracted = extractQuantityAndUnit(quantityPart.trim())
+            if (extracted != null) {
+                quantity = extracted.first
+                unit = extracted.second
+            }
+        } else {
+            // No dash found, try to parse the entire line
+            val extracted = extractQuantityAndUnit(cleanedLine)
+            if (extracted != null) {
+                quantity = extracted.first
+                unit = extracted.second
+                // Remove the quantity and unit from the name
+                name = cleanedLine
+                    .replace(Regex("""${Regex.escape(quantity)}\s*${Regex.escape(unit)}""", RegexOption.IGNORE_CASE), "")
+                    .replace(Regex("""${Regex.escape(unit)}\s*${Regex.escape(quantity)}""", RegexOption.IGNORE_CASE), "")
+                    .trim()
             }
         }
         
-        // Clean up name
+        // Clean up name - remove any remaining special characters
         name = name.replace(Regex("""[-–—:,.]"""), " ")
             .replace(Regex("""\s+"""), " ")
             .trim()
@@ -121,6 +122,39 @@ class ParseIngredientsUseCase {
             unit = unit,
             confidence = 0.8f
         )
+    }
+    
+    /**
+     * Extract quantity and unit from a string
+     * Returns Pair(quantity, unit) or null if not found
+     */
+    private fun extractQuantityAndUnit(text: String): Pair<String, String>? {
+        val normalizedText = text.trim()
+        
+        for (pattern in QUANTITY_PATTERNS) {
+            val match = pattern.find(normalizedText)
+            if (match != null) {
+                val (first, second) = match.destructured
+                
+                // Check if first group is number or unit
+                val isFirstNumber = first.toDoubleOrNull() != null
+                
+                if (isFirstNumber) {
+                    val possibleUnit = second.lowercase(Locale.getDefault())
+                    if (UNITS.contains(possibleUnit) || possibleUnit.length <= 4) {
+                        return Pair(first, possibleUnit)
+                    }
+                } else {
+                    // Reversed format: "kg 1"
+                    val possibleUnit = first.lowercase(Locale.getDefault())
+                    if (UNITS.contains(possibleUnit) || possibleUnit.length <= 4) {
+                        return Pair(second, possibleUnit)
+                    }
+                }
+            }
+        }
+        
+        return null
     }
     
     private fun parseRawText(rawText: String): List<Ingredient> {
@@ -139,8 +173,16 @@ class ParseIngredientsUseCase {
     
     private fun cleanText(text: String): String {
         return text
-            .replace(Regex("""[^\w\s.-]"""), " ") // Remove special chars except word chars, space, dot, dash
-            .replace(Regex("""\s+"""), " ") // Normalize whitespace
+            // Normalize whitespace first
+            .replace(Regex("""\s+"""), " ")
+            // Fix common OCR errors in numbers
+            .replace(Regex("""\bI\s*([kKgGmMlL])\b"""), "1$1") // "Ikg" -> "1kg"
+            .replace(Regex("""\bO\s*([kKgGmMlL])\b"""), "0$1") // "Okg" -> "0kg"
+            // Preserve dashes (important for "Item - Quantity" format)
+            // Remove other special chars except word chars, space, dot, dash
+            .replace(Regex("""[^\w\s.\-–—]"""), " ")
+            // Normalize multiple spaces again
+            .replace(Regex("""\s+"""), " ")
             .trim()
     }
 }

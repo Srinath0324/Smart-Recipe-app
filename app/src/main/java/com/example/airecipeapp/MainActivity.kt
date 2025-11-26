@@ -134,11 +134,8 @@ fun MainApp(
                     viewModel = viewModel,
                     scanId = scanId,
                     onNavigateBack = {
-                        // Navigate to home instead of going back to camera
-                        navController.navigate(Screen.Home.route) {
-                            popUpTo(Screen.Home.route) { inclusive = false }
-                            launchSingleTop = true
-                        }
+                        // Pop back stack to home, removing camera from stack
+                        navController.popBackStack(Screen.Home.route, inclusive = false)
                     },
                     onNavigateToRecipes = { id ->
                         navController.navigate(Screen.Recipes.createRoute(id))
@@ -151,8 +148,15 @@ fun MainApp(
                 arguments = listOf(navArgument("scanId") { type = NavType.LongType })
             ) { backStackEntry ->
                 val scanId = backStackEntry.arguments?.getLong("scanId") ?: 0L
+                val app = navController.context.applicationContext as RecipeApplication
                 val viewModel: RecipeViewModel = viewModel(
-                    factory = RecipeViewModelFactory(scanRepository, matchRecipesUseCase)
+                    factory = RecipeViewModelFactory(
+                        scanRepository,
+                        matchRecipesUseCase,
+                        app.modelRepository,
+                        app.modelDownloadManager,
+                        app.generateAIRecipesUseCase
+                    )
                 )
                 RecipeResultsScreen(
                     viewModel = viewModel,

@@ -10,9 +10,12 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -20,8 +23,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -121,6 +127,112 @@ fun PermissionDeniedScreen(
 }
 
 @Composable
+fun InstructionDialog(
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                text = "How to Get Best Results",
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold
+            )
+        },
+        text = {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // Grocery list format image
+                androidx.compose.foundation.Image(
+                    painter = androidx.compose.ui.res.painterResource(
+                        id = com.example.airecipeapp.R.drawable.grocery_list_format
+                    ),
+                    contentDescription = "Grocery list format example",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(200.dp)
+                        .padding(vertical = 8.dp),
+                    contentScale = androidx.compose.ui.layout.ContentScale.Fit
+                )
+                
+                Spacer(modifier = Modifier.height(16.dp))
+                
+                // Instructions
+                Text(
+                    text = "For best scanning accuracy:",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.align(Alignment.Start)
+                )
+                
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                InstructionItem(
+                    icon = Icons.Default.FormatListBulleted,
+                    text = "Use the format shown above:\nItem Name - Quantity + Unit"
+                )
+                
+                InstructionItem(
+                    icon = Icons.Default.Edit,
+                    text = "Write in large, clear handwriting"
+                )
+                
+                InstructionItem(
+                    icon = Icons.Default.WbSunny,
+                    text = "Ensure good lighting"
+                )
+                
+                InstructionItem(
+                    icon = Icons.Default.CenterFocusStrong,
+                    text = "Keep the camera steady and focused"
+                )
+                
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        },
+        confirmButton = {
+            Button(
+                onClick = onDismiss,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Got It!")
+            }
+        }
+    )
+}
+
+@Composable
+fun InstructionItem(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    text: String
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 6.dp),
+        verticalAlignment = Alignment.Top
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = null,
+            modifier = Modifier.size(20.dp),
+            tint = MaterialTheme.colorScheme.primary
+        )
+        Spacer(modifier = Modifier.width(12.dp))
+        Text(
+            text = text,
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.weight(1f)
+        )
+    }
+}
+
+
+@Composable
 fun CameraScreen(
     viewModel: CameraViewModel,
     onNavigateBack: () -> Unit
@@ -131,6 +243,22 @@ fun CameraScreen(
     
     var imageCapture: ImageCapture? by remember { mutableStateOf(null) }
     val scope = rememberCoroutineScope()
+    
+    // Preferences manager for tracking first-time instructions
+    val preferencesManager = remember { com.example.airecipeapp.utils.PreferencesManager(context) }
+    var showInstructions by remember { 
+        mutableStateOf(!preferencesManager.hasCameraInstructionsBeenShown()) 
+    }
+    
+    // Show instruction dialog on first visit
+    if (showInstructions) {
+        InstructionDialog(
+            onDismiss = {
+                preferencesManager.markCameraInstructionsShown()
+                showInstructions = false
+            }
+        )
+    }
     
     // Gallery picker
     val galleryLauncher = rememberLauncherForActivityResult(
